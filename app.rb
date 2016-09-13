@@ -4,9 +4,10 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require './environments'
 
-
-
-
+get "/contacts" do
+  @contacts = Contact.all
+  erb :index
+end
 
 get "/" do
   erb :home
@@ -21,12 +22,6 @@ end
 #  @contacts = Contact.all
 #  erb :index
 #end
-
-get "/contacts" do
-  @contacts = Contact.all
-  erb :index
-end
-
 
 get "/create" do
   dashboard_url = 'https://dashboard.heroku.com/'
