@@ -6,7 +6,7 @@ require './environments'
 
 get "/contacts" do
   @contacts = Contact.all
-  erb :home
+  erb :index
 end
 
 get "/" do
